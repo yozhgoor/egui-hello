@@ -15,7 +15,9 @@ fn main() -> Result<()> {
 
     match clap::Parser::parse() {
         Opt::Dist(dist) => {
-            dist.assets_dir("assets").app_name("hello").build("hello")?;
+            dist.assets_dir("assets")
+                .app_name("hello")
+                .build("egui-hello")?;
         }
         Opt::Watch(watch) => {
             let mut command = Command::new("cargo");
